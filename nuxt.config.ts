@@ -1,8 +1,10 @@
 // ¯\_(ツ)_/¯
-export default {
+import { Configuration } from '@nuxt/types'
+
+const config: Configuration = {
   mode: 'universal',
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Egresados',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,6 +29,11 @@ export default {
   axios: {},
 
   build: {
-    extend(_config: any, _ctx: any) {}
+    extend(_config, _ctx) {},
+    postcss: {
+      preset: { autoprefixer: {} }
+    }
   }
 }
+
+export default config
