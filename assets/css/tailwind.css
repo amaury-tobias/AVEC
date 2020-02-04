@@ -4,5 +4,28 @@ html {
   scroll-behavior: smooth;
 }
 
+.thin-scrollbar {
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    @apply bg-gray-300;
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-black;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    @apply bg-transparent w-0 h-0;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-transparent;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
