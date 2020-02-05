@@ -1,7 +1,38 @@
+:root {
+  --dark-color: #000;
+  --light-color: #fff;
+  --dark-highlight-color: #000;
+  --light-highlight-color: #edf2f7;
+
+  &.dark {
+    --dark-color: #fff;
+    --light-color: #000;
+    --dark-highlight-color: #2d3748;
+    --light-highlight-color: rgb(74, 85, 104);
+  }
+  /* @apply bg-gray-200 */
+}
+* {
+  transition: 0.3s;
+}
 @tailwind base;
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: rgb(0 0 0);
+    --text-color: #fff;
+    --nav-bg-color: #1a202c;
+    --nav-text-color: #fff;
+  }
+} */
 
 html {
   scroll-behavior: smooth;
+  @apply bg-light;
+}
+
+.__nuxt-error-page {
+  @apply bg-light text-dark;
 }
 
 .thin-scrollbar {
