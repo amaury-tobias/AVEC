@@ -16,7 +16,7 @@ const config: Configuration = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  loading: { color: '#fff' },
+  loading: { color: '#000' },
   css: [],
   plugins: ['~/plugins/composition-api'],
   buildModules: [
@@ -32,6 +32,13 @@ const config: Configuration = {
     extend(_config, _ctx) {},
     postcss: {
       preset: { autoprefixer: {} }
+    },
+    loaders: {
+      cssModules: {
+        modules: {
+          localIdentName: '[name]__[local]__[hash:base64:5]'
+        }
+      }
     }
   }
 }
