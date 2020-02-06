@@ -1,4 +1,3 @@
-// ¯\_(ツ)_/¯
 import { Configuration } from '@nuxt/types'
 
 const config: Configuration = {
@@ -13,13 +12,25 @@ const config: Configuration = {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'author',
+        content: 'Isidro Amaury Tobias Quiroz <amaury.tobiasqr@gmail.com>'
+      },
+      {
+        name: 'welp',
+        content: '¯\\_(ツ)_/¯'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#000' },
   css: [],
-  plugins: ['~/plugins/composition-api'],
+  plugins: [
+    '~/plugins/composition-api',
+    '~/plugins/click-outside-directive',
+    '~/plugins/font-awesome'
+  ],
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
