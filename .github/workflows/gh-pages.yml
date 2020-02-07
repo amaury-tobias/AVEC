@@ -16,9 +16,13 @@ jobs:
         with:
           node-version: '12.x'
 
-      - run: npm ci
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
 
-      - run: npm run generate
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: generate
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
