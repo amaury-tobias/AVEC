@@ -2,6 +2,9 @@ import { Configuration } from '@nuxt/types'
 
 const config: Configuration = {
   server: { host: '0.0.0.0' },
+  router: {
+    base: '/e-front/'
+  },
   mode: 'universal',
   head: {
     title: 'Egresados',
@@ -49,7 +52,8 @@ const config: Configuration = {
       'layouts/**/*.vue',
       'pages/**/*.vue',
       'plugins/**/*.js'
-    ]
+    ],
+    whitelist: ['svg-inline--fa', 'fa-w-16']
   },
 
   build: {
