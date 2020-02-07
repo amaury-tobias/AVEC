@@ -53,7 +53,7 @@ const config: Configuration = {
       'pages/**/*.vue',
       'plugins/**/*.js'
     ],
-    whitelist: ['svg-inline--fa', 'fa-w-16']
+    whitelistPatterns: [/svg-inline--fa/]
   },
 
   build: {
