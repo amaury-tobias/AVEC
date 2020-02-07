@@ -39,6 +39,18 @@ const config: Configuration = {
   ],
   modules: ['@nuxtjs/axios'],
   axios: {},
+  tailwindcss: {
+    purgeCSSInDev: false
+  },
+  purgeCSS: {
+    paths: [
+      'components/**/*.vue',
+      'components/**/*.ts',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js'
+    ]
+  },
 
   build: {
     extend(_config, _ctx) {},
