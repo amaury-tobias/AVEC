@@ -14,6 +14,7 @@
             </span>
           </a>
           <button
+            aria-label="cambiar tema"
             class="bg-light-highlight flex items-center justify-center rounded-full h-10 w-10 mr-2 text-white"
             @click="theme"
           >

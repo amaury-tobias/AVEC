@@ -31,7 +31,7 @@ export default Vue.component('NavbarMenuButton', {
         on: listeners,
         staticClass:
           'flex items-center justify-center h-10 w-10 bg-light-highlight text-white focus:outline-none rounded-full',
-        attrs: { type: 'button' }
+        attrs: { type: 'button', 'aria-label': 'menu' }
       },
       [
         h(
