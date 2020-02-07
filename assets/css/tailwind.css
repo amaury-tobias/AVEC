@@ -1,8 +1,9 @@
 :root {
   --dark-color: #000;
-  --light-color: #fff;
-  --dark-highlight-color: #000;
+  --light-color: #f2f2f2;
+  --dark-highlight-color: #fff;
   --light-highlight-color: #2d3748;
+
 
   &.dark {
     --dark-color: #fff;
@@ -11,9 +12,7 @@
     --light-highlight-color: #1a202c;
   }
 }
-* {
-  transition: 0.3s;
-}
+
 @tailwind base;
 
 /* @media (prefers-color-scheme: dark) {
