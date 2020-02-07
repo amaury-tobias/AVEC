@@ -1,13 +1,13 @@
 <template>
   <div
     v-click-outside="closeMenu"
-    class="fixed py-4 w-full bg-dark-highlight text-white z-50"
+    class="fixed py-4 w-full bg-dark-highlight z-50"
     style="bottom: 0;"
   >
     <div class="flex items-center justify-around">
       <navbar-menu-button :is-opened="isMenuOpen" @click="isMenuOpen = true" />
 
-      <nuxt-link to="/" class="font-medium text-lg">DEMO</nuxt-link>
+      <nuxt-link to="/" class="font-medium text-lg text-dark">DEMO</nuxt-link>
       <nuxt-link
         to="/"
         class="bg-light-highlight rounded-full h-10 w-10 flex-shrink-0 overflow-hidden flex items-center justify-center"
@@ -18,7 +18,7 @@
     <transition name="slide-top">
       <div
         v-if="isMenuOpen"
-        class="w-full bg bg-dark-highlight text-white fixed p-4 pb-10 z-0"
+        class="w-full bg-dark-highlight text-white fixed p-4 pb-16 rounded-t-lg"
         style="bottom: 0;"
       >
         <ul class="text-lg flex flex-col items-start">
