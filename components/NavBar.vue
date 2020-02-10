@@ -22,15 +22,7 @@
         style="bottom: 0;"
       >
         <ul class="text-lg flex flex-col items-start">
-          <li class="self-end mb-2 flex">
-            <button
-              aria-label="cambiar tema"
-              class="bg-light-highlight flex items-center justify-center rounded-full h-10 w-10 mr-2"
-              @click="theme"
-            >
-              <fa-icon v-if="themeLocal" :icon="['far', 'sun']" />
-              <fa-icon v-else :icon="['far', 'moon']" />
-            </button>
+          <li class="self-end mb-2">
             <navbar-menu-button
               :is-opened="isMenuOpen"
               @click="isMenuOpen = false"
@@ -50,32 +42,17 @@
 </template>
 
 <script lang="ts">
-import { createComponent, ref, onBeforeMount } from '@vue/composition-api'
+import { createComponent, ref } from '@vue/composition-api'
 import NavbarMenuButton from '~/components/NavbarMenuButton'
 
 export default createComponent({
   components: { NavbarMenuButton },
   setup() {
     const isMenuOpen = ref(false)
-    const themeLocal = ref<string | null>(null)
 
-    const theme = () => {
-      if (document.documentElement.classList.toggle('dark')) {
-        localStorage.setItem('theme', 'dark')
-        themeLocal.value = 'dark'
-      } else {
-        localStorage.removeItem('theme')
-        themeLocal.value = null
-      }
-    }
     const closeMenu = () => (isMenuOpen.value = false)
 
-    onBeforeMount(() => {
-      themeLocal.value = localStorage.getItem('theme')
-      if (themeLocal.value === 'dark') theme()
-    })
-
-    return { isMenuOpen, theme, themeLocal, closeMenu }
+    return { isMenuOpen, closeMenu }
   }
 })
 </script>

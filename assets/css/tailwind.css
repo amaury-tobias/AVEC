@@ -3,30 +3,38 @@
   --light-color: #f2f2f2;
   --dark-highlight-color: #fff;
   --light-highlight-color: #2d3748;
-
-
-  &.dark {
-    --dark-color: #fff;
-    --light-color: #000;
-    --dark-highlight-color: #2d3748;
-    --light-highlight-color: #1a202c;
-  }
+  --image-filter: grayscale(0%);
 }
 
-@tailwind base;
-
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --dark-color: #fff;
     --light-color: #000;
     --dark-highlight-color: #2d3748;
     --light-highlight-color: #1a202c;
+    --image-filter: grayscale(50%);
   }
-} */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: unset;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
 
 html {
   scroll-behavior: smooth;
   @apply bg-light;
+
+  & img:not([src*='.svg']) {
+    filter: var(--image-filter);
+  }
 }
 
 .__nuxt-error-page {
@@ -56,5 +64,6 @@ html {
   }
 }
 
+@tailwind base;
 @tailwind components;
 @tailwind utilities;

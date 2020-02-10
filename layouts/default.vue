@@ -13,17 +13,9 @@
               Ruta 1
             </span>
           </a>
-          <button
-            aria-label="cambiar tema"
-            class="bg-light-highlight flex items-center justify-center rounded-full h-10 w-10 mr-2 text-white"
-            @click="theme"
-          >
-            <fa-icon v-if="themeLocal" :icon="['far', 'sun']" />
-            <fa-icon v-else :icon="['far', 'moon']" />
-          </button>
         </div>
       </div>
-      <nuxt />
+      <nuxt class="mb-32" />
     </div>
 
     <nav-bar class="md:hidden" />
@@ -31,25 +23,37 @@
 </template>
 
 <script lang="ts">
-import { createComponent, ref } from '@vue/composition-api'
+import {
+  createComponent,
+  onUnmounted,
+  ref,
+  onMounted
+} from '@vue/composition-api'
 import NavBar from '~/components/NavBar.vue'
 
 export default createComponent({
   components: { NavBar },
-  setup() {
-    const themeLocal = ref<string | null>(null)
+  setup(_, { root }) {
+    const isDarkTheme = ref(false)
 
-    const theme = () => {
-      if (document.documentElement.classList.toggle('dark')) {
-        localStorage.setItem('theme', 'dark')
-        themeLocal.value = 'dark'
-      } else {
-        localStorage.removeItem('theme')
-        themeLocal.value = null
-      }
-    }
+    const themeHandler = (e: MediaQueryListEvent) =>
+      (isDarkTheme.value = e.matches)
 
-    return { theme, themeLocal }
+    onMounted(() => {
+      if (!root.$isServer)
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addListener(themeHandler)
+    })
+
+    onUnmounted(() => {
+      if (!root.$isServer)
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .removeListener(themeHandler)
+    })
+
+    return { isDarkTheme }
   }
 })
 </script>
