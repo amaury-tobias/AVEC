@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-20 flex justify-center items-center flex-grow flex-col">
+  <div class="flex justify-center items-center flex-grow flex-col">
     <card-news
       v-for="i in 10"
       :key="i"
