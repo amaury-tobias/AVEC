@@ -1,3 +1,4 @@
+import path from 'path'
 import { Configuration } from '@nuxt/types'
 
 const config: Configuration = {
@@ -58,7 +59,20 @@ const config: Configuration = {
   },
 
   build: {
-    extend(_config, _ctx) {},
+    extend(config, _ctx) {
+      // eslint-disable-next-line no-unused-expressions
+      config.module?.rules?.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        include: path.resolve(__dirname, 'articles'),
+        options: {
+          mode: ['vue-component'],
+          vue: {
+            root: 'markdown-body'
+          }
+        }
+      })
+    },
     postcss: {
       preset: { autoprefixer: {} }
     },
