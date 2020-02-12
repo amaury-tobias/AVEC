@@ -30,7 +30,7 @@ const config: Configuration = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#000' },
-  css: [],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
   plugins: [
     '~/plugins/composition-api',
     '~/plugins/click-outside-directive',
