@@ -1,15 +1,6 @@
 <template>
-  <div class="flex justify-center items-center flex-grow flex-col">
-    <card-news
-      v-for="i in 10"
-      :key="i"
-      :image="i % 2 == 0 ? `https://picsum.photos/500?random=${i}` : undefined"
-      title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-      date="20 Ene 2020"
-      description="Neiman Marcus, is an American Flagship department store which is
-              among the most prestigious luxury stores. However, its iOS App is
-              barely satisfactory."
-    />
+  <div class="flex justify-center items-center font-light text-6xl">
+    Bienvenido
   </div>
 </template>
 
