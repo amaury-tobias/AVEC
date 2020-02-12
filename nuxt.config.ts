@@ -30,12 +30,11 @@ const config: Configuration = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#000' },
-  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
+  css: [],
   plugins: [
     '~/plugins/composition-api',
     '~/plugins/vue-lazyload',
-    '~/plugins/click-outside-directive',
-    '~/plugins/font-awesome'
+    '~/plugins/click-outside-directive'
   ],
   buildModules: [
     '@nuxt/typescript-build',
