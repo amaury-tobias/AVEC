@@ -33,6 +33,7 @@ const config: Configuration = {
   css: ['@fortawesome/fontawesome-svg-core/styles.css'],
   plugins: [
     '~/plugins/composition-api',
+    '~/plugins/vue-lazyload',
     '~/plugins/click-outside-directive',
     '~/plugins/font-awesome'
   ],
