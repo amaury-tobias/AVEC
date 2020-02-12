@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-32">
+  <div class="my-32 mx-4">
     <header class="mb-10">
       <h1 class="mb-4 font-thin text-6xl capitalize">
         {{ attrs.title }}
@@ -42,7 +42,6 @@ export default createComponent({
 
 <style lang="postcss">
 blockquote {
-  /* @apply border-l-4 pl-2 border-dark text-dark; */
   @apply relative p-2 m-2 italic border-l-4;
 }
 </style>
