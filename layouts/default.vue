@@ -1,24 +1,16 @@
 <template>
   <div
-    class="min-h-screen flex justify-center bg-light text-dark transition-colors duration-300"
+    class="min-h-screen flex items-center justify-center w-full text-dark transition-colors duration-300"
   >
-    <div class="flex items-stretch justify-center flex-grow">
-      <div class="w-1/12 hidden xl:block"></div>
-      <div class="w-2/6 lg:w-3/12 hidden md:block">
-        <div
-          class="flex flex-col items-start justify-start sticky top-0 m-4 p-8 rounded-lg"
-        >
-          <a class="rounded-full bg-dark-highlight py-1 px-3 my-2" href="">
-            <span class="font-medium text-lg">
-              Ruta 1
-            </span>
-          </a>
-        </div>
-      </div>
-      <nuxt class="mb-32" />
-    </div>
+    <div class="flex w-full h-full">
+      <div class="flex justify-center w-full h-full min-h-screen">
+        <sidebar class="hidden md:flex h-screen" style="min-width: 285px;" />
 
-    <nav-bar class="md:hidden" />
+        <nuxt class="w-full" style="max-width: 600px;" />
+
+        <navbar class="md:hidden" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,10 +21,11 @@ import {
   ref,
   onMounted
 } from '@vue/composition-api'
-import NavBar from '~/components/NavBar.vue'
+import Navbar from '~/components/navigation/Navbar.vue'
+import Sidebar from '~/components/navigation/Sidebar.vue'
 
 export default createComponent({
-  components: { NavBar },
+  components: { Navbar, Sidebar },
   setup(_, { root }) {
     const isDarkTheme = ref(false)
 
