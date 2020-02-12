@@ -3,13 +3,13 @@
     <div class="flex flex-col justify-around items-stretch w-full h-full">
       <div class="flex flex-col">
         <nuxt-link
-          class="flex items-center mb-4 hover:bg-light-highlight hover:text-white rounded-l-full"
+          class="flex items-center mb-4 hover:bg-dark-highlight rounded-l-full"
           to="/"
         >
           <span
-            class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+            class="bg-dark-highlight rounded-full h-10 w-10 flex items-center justify-center"
           >
-            <home-icon class="text-white" />
+            <home-icon />
           </span>
           <span class="text-xl ml-2">
             Inicio
@@ -17,13 +17,13 @@
         </nuxt-link>
 
         <nuxt-link
-          class="flex items-center mb-4 hover:bg-light-highlight hover:text-white rounded-l-full"
+          class="flex items-center mb-4 hover:bg-dark-highlight rounded-l-full"
           to="/noticias"
         >
           <span
-            class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+            class="bg-dark-highlight rounded-full h-10 w-10 flex items-center justify-center"
           >
-            <calendar-icon class="text-white" />
+            <calendar-icon />
           </span>
           <span class="text-xl ml-2">
             Noticias
@@ -31,13 +31,13 @@
         </nuxt-link>
 
         <nuxt-link
-          class="flex items-center mb-4 hover:bg-light-highlight hover:text-white rounded-l-full"
+          class="flex items-center mb-4 hover:bg-dark-highlight rounded-l-full"
           to="/perfil"
         >
           <span
-            class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+            class="bg-dark-highlight rounded-full h-10 w-10 flex items-center justify-center"
           >
-            <user-icon class="text-white" />
+            <user-icon />
           </span>
           <span class="text-xl ml-2">
             Perfil
@@ -45,13 +45,13 @@
         </nuxt-link>
 
         <nuxt-link
-          class="flex items-center mb-4 hover:bg-light-highlight hover:text-white rounded-l-full"
+          class="flex items-center mb-4 hover:bg-dark-highlight rounded-l-full"
           to="/ajustes"
         >
           <span
-            class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+            class="bg-dark-highlight rounded-full h-10 w-10 flex items-center justify-center"
           >
-            <settings-icon class="text-white" />
+            <settings-icon />
           </span>
           <span class="text-xl ml-2">
             Ajustes
@@ -87,6 +87,6 @@ export default createComponent({
 
 <style lang="postcss" scoped>
 .nuxt-link-exact-active {
-  @apply bg-light-highlight text-white;
+  @apply bg-dark-highlight;
 }
 </style>
