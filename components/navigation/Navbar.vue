@@ -29,11 +29,52 @@
             />
           </li>
 
-          <li class="bg-light-highlight rounded px-2 py-1 mb-2">
-            <nuxt-link to="/">Ruta 1</nuxt-link>
+          <li
+            class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
+            @click="isMenuOpen = false"
+          >
+            <span
+              class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+            >
+              <home-icon class="text-white" />
+            </span>
+            <nuxt-link to="/">Inicio</nuxt-link>
           </li>
-          <li class="bg-light-highlight rounded px-2 py-1">
-            <nuxt-link to="/">Ruta 2</nuxt-link>
+
+          <li
+            class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
+            @click="isMenuOpen = false"
+          >
+            <span
+              class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+            >
+              <calendar-icon class="text-white" />
+            </span>
+            <nuxt-link to="/noticias">Noticias</nuxt-link>
+          </li>
+
+          <li
+            class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
+            @click="isMenuOpen = false"
+          >
+            <span
+              class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+            >
+              <user-icon class="text-white" />
+            </span>
+            <nuxt-link to="/">Perfil</nuxt-link>
+          </li>
+
+          <li
+            class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
+            @click="isMenuOpen = false"
+          >
+            <span
+              class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+            >
+              <settings-icon class="text-white" />
+            </span>
+            <nuxt-link to="/">Ajustes</nuxt-link>
           </li>
         </ul>
       </div>
@@ -43,10 +84,22 @@
 
 <script lang="ts">
 import { createComponent, ref } from '@vue/composition-api'
+import {
+  HomeIcon,
+  UserIcon,
+  SettingsIcon,
+  CalendarIcon
+} from 'vue-feather-icons'
 import NavbarMenuButton from '~/components/NavbarMenuButton'
 
 export default createComponent({
-  components: { NavbarMenuButton },
+  components: {
+    NavbarMenuButton,
+    HomeIcon,
+    UserIcon,
+    SettingsIcon,
+    CalendarIcon
+  },
   setup() {
     const isMenuOpen = ref(false)
 
