@@ -1,17 +1,15 @@
 <template functional>
-  <div
-    class="max-w-md md:max-w-screen-md mx-2 my-3 bg-dark-highlight rounded-lg shadow"
-  >
-    <a href="#" class="block no-underline">
+  <div class="bg-dark-highlight rounded-lg shadow mb-4">
+    <nuxt-link to="/noticias/test" class="block no-underline">
       <img
         v-if="props.image"
+        v-lazy="props.image"
         class="w-full object-cover rounded-t-lg"
-        :src="props.image"
         alt=""
       />
       <div class="px-6 py-6">
         <header>
-          <h2 class="font-medium text-lg mb-2 capitalize">
+          <h2 class="font-light text-2xl mb-2 capitalize">
             {{ props.title }}
           </h2>
           <div class="text-xs flex items-center my-1">
@@ -25,7 +23,7 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-4 w-4 mr-1 feather feather-calendar"
+              class="h-4 w-4 feather feather-calendar"
             >
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
               <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -38,12 +36,12 @@
           </div>
         </header>
         <article>
-          <p class="leading-normal mb-4 text-grey-darker">
+          <p class="leading-normal mb-4">
             {{ props.description }}
           </p>
         </article>
       </div>
-    </a>
+    </nuxt-link>
   </div>
 </template>
 
