@@ -15,6 +15,8 @@
 
 <script lang="ts">
 import { createComponent, ref } from '@vue/composition-api'
+import LazyImage from '~/components/LazyImage.vue'
+
 export default createComponent({
   props: {
     name: {
@@ -28,7 +30,8 @@ export default createComponent({
       import(`~/articles/${name}.md`).then((fmd) => {
         attrs.value = fmd.attributes
         return {
-          extends: fmd.vue.component
+          extends: fmd.vue.component,
+          components: { LazyImage }
         }
       })
 
@@ -36,11 +39,8 @@ export default createComponent({
   }
 })
 </script>
-<style lang="postcss">
-img {
-  @apply my-4 rounded-lg w-full;
-}
 
+<style lang="postcss">
 blockquote {
   /* @apply border-l-4 pl-2 border-dark text-dark; */
   @apply relative p-2 m-2 italic border-l-4;
