@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col justify-center items-center w-full p-2 md:p-0">
+  <div
+    class="flex flex-col justify-center items-center h-full mt-4 mb-16 md:my-16 p-2 md:p-0"
+  >
     <card-news
       v-for="i in 10"
       :key="i"
