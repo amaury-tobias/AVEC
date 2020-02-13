@@ -15,38 +15,21 @@
 </template>
 
 <script lang="ts">
-import {
-  createComponent,
-  onUnmounted,
-  ref,
-  onMounted
-} from '@vue/composition-api'
+import { createComponent, onMounted } from '@vue/composition-api'
 import Navbar from '~/components/navigation/Navbar.vue'
 import Sidebar from '~/components/navigation/Sidebar.vue'
 
 export default createComponent({
   components: { Navbar, Sidebar },
   setup(_, { root }) {
-    const isDarkTheme = ref(false)
-
-    const themeHandler = (e: MediaQueryListEvent) =>
-      (isDarkTheme.value = e.matches)
-
     onMounted(() => {
-      if (!root.$isServer)
-        window
-          .matchMedia('(prefers-color-scheme: dark)')
-          .addListener(themeHandler)
+      if (!root.$isServer) {
+        const theme = localStorage.getItem('theme')
+        document.documentElement.classList.add(theme!)
+      }
     })
 
-    onUnmounted(() => {
-      if (!root.$isServer)
-        window
-          .matchMedia('(prefers-color-scheme: dark)')
-          .removeListener(themeHandler)
-    })
-
-    return { isDarkTheme }
+    return {}
   }
 })
 </script>
