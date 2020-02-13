@@ -74,7 +74,7 @@
             >
               <settings-icon class="text-white" />
             </span>
-            <nuxt-link to="/">Ajustes</nuxt-link>
+            <nuxt-link to="/ajustes">Ajustes</nuxt-link>
           </li>
         </ul>
       </div>
