@@ -58,13 +58,35 @@
           </span>
         </nuxt-link>
       </div>
-      <div class="text-gray-600 text-xs">
+      <div id="disc" class="text-xs font-light">
         <p>
-          · Seguridad <br />
-          · Información adicional <br />
-          ·Términos de servicio <br />
-          · Contacto · Cerrar sesión <br />
-          Mastodon es software libre.
+          <a href="">
+            · Información adicional
+          </a>
+        </p>
+
+        <p>
+          <a href="">
+            ·Términos de servicio
+          </a>
+        </p>
+
+        <p>
+          <a href="">
+            · Contacto
+          </a>
+        </p>
+
+        <p>
+          <a href="#">
+            · Cerrar sesión
+          </a>
+        </p>
+
+        <p>
+          <a href="">
+            ©Amaury Tobias.
+          </a>
         </p>
       </div>
     </div>
@@ -88,5 +110,14 @@ export default createComponent({
 <style lang="postcss" scoped>
 .nuxt-link-exact-active {
   @apply bg-dark-highlight;
+}
+
+a {
+  @apply text-dark no-underline;
+}
+#disc {
+  & a {
+    @apply text-gray-600;
+  }
 }
 </style>
