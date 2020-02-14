@@ -1,21 +1,20 @@
 :root {
-  --dark-color: #000;
-  --light-color: #f1f2f6;
-  --dark-highlight-color: #fff;
-  --light-highlight-color: #2d3748;
-  --image-filter: grayscale(0%);
   &.light {
     --dark-color: #000;
     --light-color: #f1f2f6;
     --dark-highlight-color: #fff;
     --light-highlight-color: #2d3748;
+    --gray-transparent-color: transparent;
+
     --image-filter: grayscale(0%);
   }
   &.dark {
     --dark-color: #fff;
     --light-color: #000;
-    --dark-highlight-color: #2d3748;
+    --dark-highlight-color: #000;
     --light-highlight-color: #1a202c;
+    --gray-transparent-color: #2d3748;
+
     --image-filter: grayscale(50%);
   }
 }
