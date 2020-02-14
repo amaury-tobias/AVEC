@@ -29,7 +29,7 @@ const config: Configuration = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  loading: { color: '#000' },
+  loading: { color: 'var(--dark-color)' },
   css: [],
   plugins: [
     '~/plugins/composition-api',
