@@ -62,7 +62,7 @@
             >
               <user-icon class="text-white" />
             </span>
-            <nuxt-link to="/">Perfil</nuxt-link>
+            <nuxt-link to="/perfil">Perfil</nuxt-link>
           </li>
 
           <li
