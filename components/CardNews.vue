@@ -1,5 +1,7 @@
 <template functional>
-  <div class="bg-dark-highlight rounded-lg shadow mb-4">
+  <div
+    class="bg-dark-highlight rounded-lg shadow mb-4 border border-gray-transparent card-news"
+  >
     <nuxt-link to="/noticias/test" class="block no-underline">
       <img
         v-if="props.image"
