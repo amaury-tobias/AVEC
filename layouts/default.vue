@@ -24,7 +24,7 @@ export default createComponent({
   setup(_, { root }) {
     onMounted(() => {
       if (!root.$isServer) {
-        const theme = localStorage.getItem('theme')
+        const theme = localStorage.getItem('theme') || 'light'
         document.documentElement.classList.add(theme!)
       }
     })
