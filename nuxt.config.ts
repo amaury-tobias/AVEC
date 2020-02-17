@@ -34,7 +34,8 @@ const config: Configuration = {
   plugins: [
     '~/plugins/composition-api',
     '~/plugins/vue-lazyload',
-    '~/plugins/click-outside-directive'
+    '~/plugins/click-outside-directive',
+    { src: '~/plugins/vue-tags-input', ssr: false }
   ],
   buildModules: [
     '@nuxt/typescript-build',
