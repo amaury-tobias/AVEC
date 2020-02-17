@@ -6,7 +6,7 @@
       <img
         v-if="props.image"
         v-lazy="props.image"
-        class="w-full object-cover rounded-t-lg"
+        class="w-full h-64 object-cover rounded-t-lg"
         alt=""
       />
       <div class="px-6 py-6">
