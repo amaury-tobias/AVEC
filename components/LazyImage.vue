@@ -24,7 +24,7 @@ img {
   @apply my-4 rounded-lg;
   @apply transition-opacity duration-1000 opacity-0;
   &[lazy='loading'] {
-    @apply opacity-100;
+    @apply opacity-0;
     filter: blur(150px);
   }
   &[lazy='loaded'] {
