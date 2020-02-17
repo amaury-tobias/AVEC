@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-end h-full px-8 pt-16 md:px-0">
+  <div class="flex flex-col justify-center items-end h-full px-8 pt-16 lg:px-0">
     <header class="font-light text-6xl">
       Ajustes
     </header>
