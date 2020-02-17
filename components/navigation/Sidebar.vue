@@ -57,6 +57,34 @@
             Ajustes
           </span>
         </nuxt-link>
+
+        <nuxt-link
+          class="flex items-center mb-4 hover:bg-dark-highlight rounded-l-full"
+          to="/login"
+        >
+          <span
+            class="bg-dark-highlight rounded-full h-10 w-10 flex items-center justify-center"
+          >
+            <log-in-icon />
+          </span>
+          <span class="text-xl ml-2">
+            Iniciar Sesion
+          </span>
+        </nuxt-link>
+
+        <nuxt-link
+          class="flex items-center mb-4 hover:bg-dark-highlight rounded-l-full"
+          to="/logout"
+        >
+          <span
+            class="bg-dark-highlight rounded-full h-10 w-10 flex items-center justify-center"
+          >
+            <log-out-icon />
+          </span>
+          <span class="text-xl ml-2">
+            Cerrar Sesion
+          </span>
+        </nuxt-link>
       </div>
       <div id="disc" class="text-xs font-light">
         <p>
@@ -84,8 +112,14 @@
         </p>
 
         <p>
-          <a href="">
-            ©Amaury Tobias.
+          <a
+            class="inline-flex items-center"
+            href="https://github.com/amaury-tobias"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <external-link-icon size="10" class="mr-1" />
+            Amaury Tobias.
           </a>
         </p>
       </div>
@@ -99,11 +133,22 @@ import {
   HomeIcon,
   UserIcon,
   SettingsIcon,
-  CalendarIcon
+  CalendarIcon,
+  LogInIcon,
+  LogOutIcon,
+  ExternalLinkIcon
 } from 'vue-feather-icons'
 
 export default createComponent({
-  components: { HomeIcon, UserIcon, SettingsIcon, CalendarIcon }
+  components: {
+    HomeIcon,
+    UserIcon,
+    SettingsIcon,
+    CalendarIcon,
+    LogInIcon,
+    LogOutIcon,
+    ExternalLinkIcon
+  }
 })
 </script>
 
