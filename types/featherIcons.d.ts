@@ -14,5 +14,7 @@ declare module 'vue-feather-icons' {
   export const GitlabIcon: Component
   export const LogInIcon: Component
   export const LogOutIcon: Component
+  export const ExternalLinkIcon: Component
+
   export default d
 }
