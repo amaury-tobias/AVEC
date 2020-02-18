@@ -29,52 +29,60 @@
             />
           </li>
 
-          <li
-            class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
-            @click="isMenuOpen = false"
-          >
-            <span
-              class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+          <li @click="isMenuOpen = false">
+            <nuxt-link
+              to="/"
+              class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
             >
-              <home-icon class="text-white" />
-            </span>
-            <nuxt-link to="/">Inicio</nuxt-link>
+              <span
+                class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+              >
+                <home-icon class="text-white" />
+              </span>
+              Inicio
+            </nuxt-link>
           </li>
 
-          <li
-            class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
-            @click="isMenuOpen = false"
-          >
-            <span
-              class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+          <li @click="isMenuOpen = false">
+            <nuxt-link
+              to="/noticias"
+              class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
             >
-              <calendar-icon class="text-white" />
-            </span>
-            <nuxt-link to="/noticias">Noticias</nuxt-link>
+              <span
+                class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+              >
+                <calendar-icon class="text-white" />
+              </span>
+              Noticias
+            </nuxt-link>
           </li>
 
-          <li
-            class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
-            @click="isMenuOpen = false"
-          >
-            <span
-              class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+          <li @click="isMenuOpen = false">
+            <nuxt-link
+              to="/perfil"
+              class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
             >
-              <user-icon class="text-white" />
-            </span>
-            <nuxt-link to="/perfil">Perfil</nuxt-link>
+              <span
+                class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+              >
+                <user-icon class="text-white" />
+              </span>
+              perfil
+            </nuxt-link>
           </li>
 
-          <li
-            class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
-            @click="isMenuOpen = false"
-          >
-            <span
-              class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+          <li @click="isMenuOpen = false">
+            <nuxt-link
+              to="/ajustes"
+              class="bg-light-highlight rounded-full pr-3 py-1 mb-2 flex items-center"
             >
-              <settings-icon class="text-white" />
-            </span>
-            <nuxt-link to="/ajustes">Ajustes</nuxt-link>
+              <span
+                class="bg-light-highlight rounded-full h-10 w-10 flex items-center justify-center"
+              >
+                <settings-icon class="text-white" />
+              </span>
+              Ajustes
+            </nuxt-link>
           </li>
         </ul>
       </div>
