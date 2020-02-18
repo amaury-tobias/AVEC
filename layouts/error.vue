@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="flex flex-col justify-center items-center font-light text-6xl text-center"
-  >
-    <p>{{ statusCode }}</p>
+  <div class="flex flex-col flex-grow justify-center font-light text-center">
+    <p class="text-6xl">{{ statusCode }}</p>
     <p v-if="statusCode === 404" class="text-xl text-gray-600">
       Lo sentimos pero esta pagina no fue encontrada
       <br />

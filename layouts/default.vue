@@ -1,15 +1,18 @@
 <template>
   <div
-    class="min-h-screen flex items-center justify-center w-full text-dark transition-colors duration-300"
+    class="min-h-screen flex items-center justify-center w-full text-dark transition-colors duration-300 select-none"
   >
-    <div class="flex w-full h-full">
-      <div class="flex justify-center w-full h-full min-h-screen">
-        <sidebar class="hidden md:flex h-screen" style="min-width: 285px;" />
+    <div class="flex w-full justify-center">
+      <sidebar class="hidden md:flex" />
 
-        <nuxt class="w-full" style="max-width: 600px;" />
-
-        <navbar class="md:hidden" />
+      <div
+        class="w-full pb-20 pt-8 px-4 flex items-stretch min-h-screen"
+        style="max-width: 600px;"
+      >
+        <nuxt />
       </div>
+
+      <navbar class="md:hidden" />
     </div>
   </div>
 </template>
