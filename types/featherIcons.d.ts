@@ -15,6 +15,7 @@ declare module 'vue-feather-icons' {
   export const LogInIcon: Component
   export const LogOutIcon: Component
   export const ExternalLinkIcon: Component
+  export const EditIcon: Component
 
   export default d
 }
