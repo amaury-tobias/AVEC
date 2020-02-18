@@ -9,7 +9,7 @@ const config: Configuration = {
   mode: 'universal',
   head: {
     title: 'Egresados',
-    htmlAttrs: { lang: 'es' },
+    htmlAttrs: { lang: 'es', class: 'no-scrollbar' },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
