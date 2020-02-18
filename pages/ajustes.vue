@@ -12,11 +12,11 @@
 </template>
 
 <script lang="ts">
-import { createComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted } from '@vue/composition-api'
 import VSwitch from '~/components/VSwitch.vue'
 import { useTheme, setDarkMode } from '~/state/theme'
 
-export default createComponent({
+export default defineComponent({
   components: { VSwitch },
   setup() {
     const { isDarkMode } = useTheme()

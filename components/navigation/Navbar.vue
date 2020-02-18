@@ -83,7 +83,7 @@
 </template>
 
 <script lang="ts">
-import { createComponent, ref } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 import {
   HomeIcon,
   UserIcon,
@@ -92,7 +92,7 @@ import {
 } from 'vue-feather-icons'
 import NavbarMenuButton from '~/components/NavbarMenuButton'
 
-export default createComponent({
+export default defineComponent({
   components: {
     NavbarMenuButton,
     HomeIcon,

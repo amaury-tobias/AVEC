@@ -107,7 +107,7 @@
 </template>
 
 <script lang="ts">
-import { createComponent, ref } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 import {
   MapPinIcon,
   TwitterIcon,
@@ -118,7 +118,7 @@ import {
 } from 'vue-feather-icons'
 import VAvatar from '~/components/VAvatar.vue'
 
-export default createComponent({
+export default defineComponent({
   components: {
     MapPinIcon,
     TwitterIcon,

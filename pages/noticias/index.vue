@@ -16,10 +16,10 @@
 </template>
 
 <script lang="ts">
-import { createComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import CardNews from '~/components/CardNews.vue'
 
-export default createComponent({
+export default defineComponent({
   components: { CardNews }
 })
 </script>

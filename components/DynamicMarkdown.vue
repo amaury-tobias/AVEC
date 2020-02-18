@@ -19,11 +19,11 @@
 </template>
 
 <script lang="ts">
-import { createComponent, ref } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 import ErrorComponent from '~/layouts/error.vue'
 import LazyImage from '~/components/LazyImage.vue'
 
-export default createComponent({
+export default defineComponent({
   props: {
     name: {
       type: String,

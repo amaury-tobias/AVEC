@@ -128,7 +128,7 @@
 </template>
 
 <script lang="ts">
-import { createComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import {
   HomeIcon,
   UserIcon,
@@ -139,7 +139,7 @@ import {
   ExternalLinkIcon
 } from 'vue-feather-icons'
 
-export default createComponent({
+export default defineComponent({
   components: {
     HomeIcon,
     UserIcon,

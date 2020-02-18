@@ -7,10 +7,10 @@
 </template>
 
 <script lang="ts">
-import { createComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import DynamicMarkdown from '~/components/DynamicMarkdown.vue'
 
-export default createComponent({
+export default defineComponent({
   components: { DynamicMarkdown },
   asyncData({ params }) {
     return {

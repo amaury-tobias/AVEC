@@ -21,9 +21,9 @@
 </template>
 
 <script lang="ts">
-import { createComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed } from '@vue/composition-api'
 
-export default createComponent({
+export default defineComponent({
   props: {
     error: {
       type: Object,

@@ -15,11 +15,11 @@
 </template>
 
 <script lang="ts">
-import { createComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted } from '@vue/composition-api'
 import Navbar from '~/components/navigation/Navbar.vue'
 import Sidebar from '~/components/navigation/Sidebar.vue'
 
-export default createComponent({
+export default defineComponent({
   components: { Navbar, Sidebar },
   setup(_, { root }) {
     onMounted(() => {
