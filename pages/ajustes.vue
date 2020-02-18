@@ -1,13 +1,20 @@
 <template>
-  <div class="flex flex-col justify-center items-end h-full px-8 pt-16 lg:px-0">
-    <header class="font-light text-6xl">
-      Ajustes
-    </header>
-    <section>
-      <div>
-        <v-switch v-model="isDarkMode" text="Dark Mode" @change="changeTheme" />
-      </div>
-    </section>
+  <div class="flex-grow">
+    <div class="flex flex-col items-end">
+      <header class="font-light text-6xl">
+        Ajustes
+      </header>
+
+      <section>
+        <div>
+          <v-switch
+            v-model="isDarkMode"
+            text="Dark Mode"
+            @change="changeTheme"
+          />
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 

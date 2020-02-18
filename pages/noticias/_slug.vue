@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex flex-col justify-center items-center h-full mt-4 mb-20 md:my-16 p-2 md:p-0"
-  >
+  <div class="flex-grow">
     <dynamic-markdown :name="slug" />
   </div>
 </template>
