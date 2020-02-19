@@ -1,8 +1,6 @@
 declare module 'vue-feather-icons' {
   import { Component } from 'vue'
 
-  const d: {}
-
   export const UserIcon: Component
   export const HomeIcon: Component
   export const SettingsIcon: Component
@@ -16,6 +14,4 @@ declare module 'vue-feather-icons' {
   export const LogOutIcon: Component
   export const ExternalLinkIcon: Component
   export const EditIcon: Component
-
-  export default d
 }
