@@ -1,7 +1,8 @@
 <template functional>
   <img
-    v-lazy="props.src"
-    class="shadow-xl rounded-full h-auto w-56 border-white border-4"
+    :src="props.src"
+    loading="lazy"
+    class="shadow-xl rounded-full w-56 h-56 border-white border-4"
     :alt="props.alt"
   />
 </template>
@@ -25,14 +26,7 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
 img {
-  @apply object-fill transition-opacity duration-1000;
-  &[lazy='loading'] {
-    @apply opacity-0;
-    filter: blur(150px);
-  }
-  &[lazy='loaded'] {
-    @apply opacity-100;
-  }
+  @apply object-fill;
   background: linear-gradient(45deg, #86fde8, #acb6e5);
 }
 </style>

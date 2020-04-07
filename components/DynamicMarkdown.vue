@@ -21,7 +21,6 @@
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
 import ErrorComponent from '~/layouts/error.vue'
-import LazyImage from '~/components/LazyImage.vue'
 
 export default defineComponent({
   props: {
@@ -39,8 +38,7 @@ export default defineComponent({
         .then((fmd) => {
           attrs.value = fmd.attributes
           return {
-            extends: fmd.vue.component,
-            components: { LazyImage }
+            extends: fmd.vue.component
           }
         })
         .catch(() => {
@@ -58,6 +56,9 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
+img[loading='lazy'] {
+  @apply my-4 rounded-lg;
+}
 blockquote {
   @apply relative p-2 m-2 italic border-l-4;
 }

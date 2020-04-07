@@ -10,7 +10,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sit dolore archit
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sit dolore architecto culpa et deleniti quo tenetur obcaecati vitae consequatur est minus dolorum, eveniet quia doloribus magni expedita rem veniam.
 
-<lazy-image src="https://picsum.photos/800" alt="funciona?" />
+![Imagen cargada lazy](https://picsum.photos/800)
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sit dolore architecto culpa et deleniti quo tenetur obcaecati vitae consequatur est minus dolorum, eveniet quia doloribus magni expedita rem veniam.
 

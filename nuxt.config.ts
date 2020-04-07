@@ -1,5 +1,6 @@
 import path from 'path'
 import { Configuration } from '@nuxt/types'
+import markdownIt from 'markdown-it'
 
 const config: Configuration = {
   server: { host: '0.0.0.0' },
@@ -21,10 +22,6 @@ const config: Configuration = {
       {
         name: 'author',
         content: 'Isidro Amaury Tobias Quiroz <amaury.tobiasqr@gmail.com>'
-      },
-      {
-        name: 'welp',
-        content: '¯\\_(ツ)_/¯'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -33,7 +30,6 @@ const config: Configuration = {
   css: [],
   plugins: [
     '~/plugins/composition-api',
-    '~/plugins/vue-lazyload',
     '~/plugins/click-outside-directive',
     { src: '~/plugins/vue-tags-input', ssr: false }
   ],
@@ -70,7 +66,15 @@ const config: Configuration = {
           mode: ['vue-component'],
           vue: {
             root: 'markdown-body'
-          }
+          },
+          markdownIt: markdownIt().use((md, _options) => {
+            const defaultImageRenderer = md.renderer.rules.image
+            md.renderer.rules.image = (tokens, idx, options, env, self) => {
+              const token = tokens[idx]
+              token.attrPush(['loading', 'lazy'])
+              return defaultImageRenderer(tokens, idx, options, env, self)
+            }
+          })
         }
       })
     },
