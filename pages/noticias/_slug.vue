@@ -12,8 +12,8 @@ export default defineComponent({
   components: { DynamicMarkdown },
   asyncData({ params }) {
     return {
-      slug: params.slug
+      slug: params.slug,
     }
-  }
+  },
 })
 </script>

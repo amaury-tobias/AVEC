@@ -26,8 +26,8 @@ export default defineComponent({
   props: {
     name: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   setup({ name }) {
     const attrs = ref({})
@@ -38,7 +38,7 @@ export default defineComponent({
         .then((fmd) => {
           attrs.value = fmd.attributes
           return {
-            extends: fmd.vue.component
+            extends: fmd.vue.component,
           }
         })
         .catch(() => {
@@ -49,9 +49,9 @@ export default defineComponent({
     return {
       error,
       attrs,
-      markdownContent
+      markdownContent,
     }
-  }
+  },
 })
 </script>
 

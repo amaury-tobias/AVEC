@@ -17,10 +17,10 @@ export default defineComponent({
       image: `https://picsum.photos/500?random=${Math.random()}`,
       description: `Neiman Marcus, is an American Flagship department store which is
               among the most prestigious luxury stores. However, its iOS App is
-              barely satisfactory.`
+              barely satisfactory.`,
     })
 
     return { cardNewsProps }
-  }
+  },
 })
 </script>

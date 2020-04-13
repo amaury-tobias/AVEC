@@ -13,8 +13,7 @@ Vue.directive('click-outside', {
     document.body.addEventListener('click', () => event(binding))
   },
   unbind(el, binding, _vnode) {
-    console.log('unbinding')
     el.removeEventListener('click', stopProp)
     document.body.removeEventListener('click', () => event(binding))
-  }
+  },
 })

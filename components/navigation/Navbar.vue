@@ -96,7 +96,7 @@ import {
   HomeIcon,
   UserIcon,
   SettingsIcon,
-  CalendarIcon
+  CalendarIcon,
 } from 'vue-feather-icons'
 import NavbarMenuButton from '~/components/NavbarMenuButton'
 
@@ -106,7 +106,7 @@ export default defineComponent({
     HomeIcon,
     UserIcon,
     SettingsIcon,
-    CalendarIcon
+    CalendarIcon,
   },
   setup() {
     const isMenuOpen = ref(false)
@@ -114,7 +114,7 @@ export default defineComponent({
     const closeMenu = () => (isMenuOpen.value = false)
 
     return { isMenuOpen, closeMenu }
-  }
+  },
 })
 </script>
 

@@ -37,6 +37,6 @@ export default defineComponent({
     }
 
     return { isDarkMode, changeTheme }
-  }
+  },
 })
 </script>

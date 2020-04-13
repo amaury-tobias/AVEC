@@ -138,7 +138,7 @@ import {
   CalendarIcon,
   LogInIcon,
   LogOutIcon,
-  ExternalLinkIcon
+  ExternalLinkIcon,
 } from 'vue-feather-icons'
 
 export default defineComponent({
@@ -149,8 +149,8 @@ export default defineComponent({
     CalendarIcon,
     LogInIcon,
     LogOutIcon,
-    ExternalLinkIcon
-  }
+    ExternalLinkIcon,
+  },
 })
 </script>
 

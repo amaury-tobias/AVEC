@@ -100,7 +100,7 @@
           </div>
 
           <button
-            class="text-dark py-2 px-4 focus:outline-none "
+            class="text-dark py-2 px-4 focus:outline-none"
             @click="isEdit = !isEdit"
           >
             <edit-icon size="12" class="inline-block" />
@@ -133,7 +133,7 @@ import {
   GithubIcon,
   GitlabIcon,
   ExternalLinkIcon,
-  EditIcon
+  EditIcon,
 } from 'vue-feather-icons'
 
 import DevianartIcon from '~/components/icons/DevianartIcon'
@@ -151,7 +151,7 @@ export default defineComponent({
     EditIcon,
     VAvatar,
     DevianartIcon,
-    ArtstationIcon
+    ArtstationIcon,
   },
   setup() {
     const isEdit = ref(false)
@@ -159,11 +159,11 @@ export default defineComponent({
     const tags = ref([
       { text: 'Vuejs' },
       { text: 'DevOps' },
-      { text: 'Docker' }
+      { text: 'Docker' },
     ])
 
     return { isEdit, tag, tags }
-  }
+  },
 })
 </script>
 

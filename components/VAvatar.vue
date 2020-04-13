@@ -14,13 +14,13 @@ export default defineComponent({
   props: {
     src: {
       type: String,
-      default: ''
+      default: '',
     },
     alt: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 })
 </script>
 

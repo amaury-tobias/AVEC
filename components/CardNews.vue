@@ -39,12 +39,12 @@ const cardNewsProps = {
   title: { required: true } as PropOptions<String, true>,
   description: { required: true } as PropOptions<String, true>,
   date: { required: true } as PropOptions<String, true>,
-  image: { required: true } as PropOptions<String, true>
+  image: { required: true } as PropOptions<String, true>,
 }
 
 export default defineComponent({
   components: { CalendarIcon },
-  props: { ...cardNewsProps }
+  props: { ...cardNewsProps },
 })
 </script>
 

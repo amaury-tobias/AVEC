@@ -1,7 +1,7 @@
 import { reactive, toRefs } from '@vue/composition-api'
 
 const state = reactive({
-  isDarkMode: false
+  isDarkMode: false,
 })
 
 export const useTheme = () => toRefs(state)

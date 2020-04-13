@@ -25,12 +25,12 @@ export default defineComponent({
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   setup({ error }) {
     const statusCode = computed(() => (error && error.statusCode) || 500)
     return { statusCode }
-  }
+  },
 })
 </script>

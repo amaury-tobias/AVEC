@@ -11,7 +11,7 @@
         class="absolute block w-4 h-4 mt-1 ml-1 rounded-full shadow inset-y-0 left-0 focus-within:shadow-outline transition-transform duration-300 ease-in-out transform"
         :class="{
           'translate-x-full bg-light-highlight': value,
-          'bg-white': !value
+          'bg-white': !value,
         }"
       >
         <input
@@ -33,12 +33,12 @@ export default defineComponent({
   props: {
     value: {
       type: Boolean,
-      required: true
+      required: true,
     },
     text: {
       type: String,
-      default: 'v-switch'
-    }
-  }
+      default: 'v-switch',
+    },
+  },
 })
 </script>

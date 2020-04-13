@@ -5,7 +5,7 @@ import markdownIt from 'markdown-it'
 const config: Configuration = {
   server: { host: '0.0.0.0' },
   router: {
-    base: '/e-front/'
+    base: '/e-front/',
   },
   mode: 'universal',
   head: {
@@ -17,32 +17,32 @@ const config: Configuration = {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: process.env.npm_package_description || '',
       },
       {
         name: 'author',
-        content: 'Isidro Amaury Tobias Quiroz <amaury.tobiasqr@gmail.com>'
-      }
+        content: 'Isidro Amaury Tobias Quiroz <amaury.tobiasqr@gmail.com>',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   loading: { color: 'var(--dark-color)' },
   css: [],
   plugins: [
     '~/plugins/composition-api',
     '~/plugins/click-outside-directive',
-    { src: '~/plugins/vue-tags-input', ssr: false }
+    { src: '~/plugins/vue-tags-input', ssr: false },
   ],
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
   ],
   modules: ['@nuxtjs/axios'],
   axios: {},
   tailwindcss: {
-    purgeCSSInDev: false
+    purgeCSSInDev: false,
   },
   purgeCSS: {
     paths: [
@@ -50,9 +50,9 @@ const config: Configuration = {
       'components/**/*.ts',
       'layouts/**/*.vue',
       'pages/**/*.vue',
-      'plugins/**/*.js'
+      'plugins/**/*.js',
     ],
-    whitelistPatterns: [/svg-inline--fa/]
+    whitelistPatterns: [/svg-inline--fa/],
   },
 
   build: {
@@ -65,30 +65,30 @@ const config: Configuration = {
         options: {
           mode: ['vue-component'],
           vue: {
-            root: 'markdown-body'
+            root: 'markdown-body',
           },
-          markdownIt: markdownIt().use((md, _options) => {
-            const defaultImageRenderer = md.renderer.rules.image
+          markdownIt: markdownIt().use((md) => {
+            const defaultImageRenderer = md.renderer.rules.image!
             md.renderer.rules.image = (tokens, idx, options, env, self) => {
               const token = tokens[idx]
               token.attrPush(['loading', 'lazy'])
               return defaultImageRenderer(tokens, idx, options, env, self)
             }
-          })
-        }
+          }),
+        },
       })
     },
     postcss: {
-      preset: { autoprefixer: {} }
+      preset: { autoprefixer: {} },
     },
     loaders: {
       cssModules: {
         modules: {
-          localIdentName: '[name]__[local]__[hash:base64:5]'
-        }
-      }
-    }
-  }
+          localIdentName: '[name]__[local]__[hash:base64:5]',
+        },
+      },
+    },
+  },
 }
 
 export default config
