@@ -1,0 +1,59 @@
+/* purgecss start ignore */
+@tailwind base;
+/* purgecss end ignore */
+
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: unset;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  & img:not([src*='.svg']) {
+    filter: var(--image-filter);
+  }
+  &.dark-mode {
+    @apply bg-black;
+  }
+  &.light-mode {
+    @apply bg-gray-200;
+  }
+}
+
+.__nuxt-error-page {
+  @apply bg-light text-dark;
+}
+/* purgecss start ignore */
+.thin-scrollbar {
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    @apply bg-gray-300;
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-black;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    @apply bg-transparent w-0 h-0;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-transparent;
+  }
+}
+/* purgecss end ignore */
