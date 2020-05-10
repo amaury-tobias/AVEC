@@ -1,0 +1,11 @@
+.eslint*
+yarn.lock
+.DS_Store
+.gitignore
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+README.md
+.env
