@@ -1,7 +1,7 @@
 <template>
   <div
     v-click-outside="closeMenu"
-    class="fixed py-2 w-10/12 bg-white dark:bg-gray-900 z-40 bottom-0 mb-2"
+    class="fixed py-1 w-10/12 bg-white dark:bg-gray-900 z-40 bottom-0 mb-5 rounded-full"
   >
     <div class="flex items-center justify-around">
       <navbar-menu-button :is-opened="isMenuOpen" @click="isMenuOpen = true" />
