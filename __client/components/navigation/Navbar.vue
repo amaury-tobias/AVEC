@@ -65,7 +65,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@vue/composition-api'
+import { defineComponent, ref } from 'nuxt-composition-api'
 import CalendarBlankOutline from 'mdi-vue/CalendarBlankOutline.vue'
 import HomeVariantOutline from 'mdi-vue/HomeVariantOutline.vue'
 import AccountOutline from 'mdi-vue/AccountOutline.vue'

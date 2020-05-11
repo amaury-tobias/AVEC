@@ -125,7 +125,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@vue/composition-api'
+import { defineComponent, ref } from 'nuxt-composition-api'
 
 import DevianartIcon from 'mdi-vue/Deviantart.vue'
 import ArtstationIcon from 'mdi-vue/Artstation.vue'
