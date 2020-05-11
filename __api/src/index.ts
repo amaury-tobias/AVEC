@@ -1,5 +1,5 @@
 import Koa from 'koa'
-// import Router from '@koa/router'
+import passport from 'koa-passport'
 import koaLogger from 'koa-logger'
 import helmet from 'koa-helmet'
 import cors from '@koa/cors'
@@ -7,6 +7,10 @@ import json from 'koa-json'
 import bodyParser from 'koa-bodyparser'
 import mongoose from 'mongoose'
 import { logger } from './services/Logger'
+import { setupKeys } from './services/Keys'
+import { PassportProvider } from './services/PassportProvider'
+
+import authRouter from './routes/Auth'
 
 const PORT = process.env.API_PORT || 80
 const {
@@ -38,10 +42,8 @@ function setupKoa() {
   app.use(koaLogger())
   app.use(bodyParser())
   app.use(json())
-  app.use((ctx) => {
-    ctx.throw(404)
-  })
-
+  app.use(passport.initialize())
+  app.use(authRouter.routes()).use(authRouter.allowedMethods())
   return app
 }
 
@@ -49,14 +51,24 @@ async function setupDB() {
   mongoose.connect(url, options)
 }
 
+function setupPassport(keys: { JWT_SECRET: Buffer; JWT_CERT: Buffer }) {
+  PassportProvider.initialize({
+    secret: keys.JWT_SECRET,
+    cert: keys.JWT_CERT,
+  })
+  passport.use(PassportProvider.localStrategy)
+  passport.use(PassportProvider.jwtStrategy)
+}
+
 async function start() {
   try {
     await setupDB()
-    logger.info('MongoDB is connected')
+    const keys = await setupKeys()
+    setupPassport(keys)
     const app = setupKoa()
     app.listen(PORT, () => logger.info(`Koa server listening on ${PORT}`))
   } catch (err) {
-    logger.error(err)
+    logger.error(err.stack)
   }
 }
 start()
