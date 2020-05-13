@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white dark:bg-black rounded-lg shadow border border-transparent dark:border-gray-700"
+    class="bg-white dark:bg-gray-900 rounded-lg shadow border border-transparent"
   >
     <nuxt-link to="/noticias/test" class="block no-underline">
       <img
@@ -23,7 +23,7 @@
           </div>
         </header>
         <article>
-          <p class="leading-normal mb-4">
+          <p class="leading-normal mb-4 text-gray-600">
             {{ description }}
           </p>
         </article>
