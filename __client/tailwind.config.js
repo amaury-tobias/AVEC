@@ -7,15 +7,6 @@ module.exports = {
   },
   theme: {
     darkSelector: '.dark-mode',
-    extend: {
-      colors: {
-        light: 'var(--light-color)',
-        dark: 'var(--dark-color)',
-        'dark-highlight': 'var(--dark-highlight-color)',
-        'light-highlight': 'var(--light-highlight-color)',
-        'gray-transparent': 'var(--gray-transparent-color)',
-      },
-    },
   },
   variants: {
     backgroundColor: [
@@ -26,7 +17,14 @@ module.exports = {
       'dark-odd',
       'hover',
     ],
-    borderColor: ['dark', 'dark-hover', 'dark-focus', 'dark-focus-within'],
+    borderColor: [
+      'dark',
+      'dark-hover',
+      'dark-focus',
+      'dark-focus-within',
+      'focus',
+      'active',
+    ],
     textColor: ['dark', 'dark-hover', 'dark-active', 'hover'],
   },
 

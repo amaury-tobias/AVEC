@@ -1,7 +1,4 @@
-/* purgecss start ignore */
 @tailwind base;
-/* purgecss end ignore */
-
 @tailwind components;
 @tailwind utilities;
 
@@ -18,21 +15,21 @@
 }
 
 html {
+  @apply transition-colors duration-300 select-none;
+  @apply bg-gray-200 text-gray-900;
   scroll-behavior: smooth;
   & img:not([src*='.svg']) {
-    filter: var(--image-filter);
+    filter: none;
   }
+
   &.dark-mode {
-    @apply bg-black;
-  }
-  &.light-mode {
-    @apply bg-gray-200;
+    @apply bg-black text-gray-200;
+    & img:not([src*='.svg']) {
+      filter: contrast(80%);
+    }
   }
 }
 
-.__nuxt-error-page {
-  @apply bg-light text-dark;
-}
 /* purgecss start ignore */
 .thin-scrollbar {
   scrollbar-width: thin;
