@@ -27,7 +27,7 @@
     "@nuxtjs/color-mode": "^1.0.0",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "@nuxtjs/stylelint-module": "^3.2.2",
+    "@nuxtjs/stylelint-module": "^4.0.0",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@teamnovu/nuxt-breaky": "^1.2.1",
     "@types/markdown-it": "^10.0.1",
