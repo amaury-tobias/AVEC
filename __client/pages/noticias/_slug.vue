@@ -13,7 +13,7 @@ export default defineComponent({
   components: { DynamicMarkdown },
   setup() {
     const { params } = useContext()
-    return { slug: params.slug }
+    return { slug: params.value.slug }
   },
 })
 </script>
