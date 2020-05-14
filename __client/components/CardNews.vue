@@ -48,9 +48,3 @@ export default defineComponent({
   components: { CalendarBlankOutline },
 })
 </script>
-
-<style lang="postcss" scoped>
-img {
-  background: linear-gradient(45deg, var(--light-highlight-color), #43c6ac);
-}
-</style>
