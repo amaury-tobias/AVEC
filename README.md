@@ -1,4 +1,4 @@
-# Egresados
+# AVEC
 
 [Isidro Amaury Tobias Quiroz](mailto:contact@amaurytq.dev)
 
