@@ -9,6 +9,7 @@ import { defineComponent, useContext } from 'nuxt-composition-api'
 import DynamicMarkdown from '@/components/markdown/DynamicMarkdown.vue'
 
 export default defineComponent({
+  auth: false,
   components: { DynamicMarkdown },
   setup() {
     const { params } = useContext()

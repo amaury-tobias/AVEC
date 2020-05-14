@@ -2,8 +2,15 @@ import path from 'path'
 import { Configuration } from '@nuxt/types'
 import markdownIt from 'markdown-it'
 
+const port = process.env.NUXT_PORT
+const host = process.env.NUXT_HOST || '0.0.0.0'
+const isDev = process.env.NODE_ENV === 'development'
+const API_URL = process.env.API_URL || 'http://api'
+const API_PORT = process.env.API_PORT || 5000
+const backendHost = `${API_URL}:${API_PORT}`
+
 const config: Configuration = {
-  server: { host: '0.0.0.0' },
+  server: { host: '0.0.0.0', port },
   mode: 'universal',
   head: {
     title: 'Egresados',
@@ -38,10 +45,33 @@ const config: Configuration = {
     '@teamnovu/nuxt-breaky',
     'nuxt-composition-api',
   ],
-  modules: ['@nuxtjs/axios'],
-  axios: {},
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth'],
+  axios: {
+    host,
+    port,
+    prefix: '/api',
+    proxy: true,
+  },
+  proxy: {
+    '/api': backendHost,
+  },
+  auth: {
+    localStorage: false,
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth/login' },
+          logout: false,
+          user: { url: '/auth/user', propertyName: 'user' },
+        },
+      },
+    },
+  },
+  router: {
+    middleware: ['auth'],
+  },
   tailwindcss: {
-    exposeConfig: true,
+    exposeConfig: isDev,
   },
   build: {
     extend(config, _ctx) {

@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropOptions } from '@vue/composition-api'
+import { defineComponent, PropOptions } from 'nuxt-composition-api'
 import CalendarBlankOutline from 'mdi-vue/CalendarBlankOutline.vue'
 
 const cardNewsProps = {

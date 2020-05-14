@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed } from 'nuxt-composition-api'
 
 export default defineComponent({
   props: {

@@ -13,12 +13,27 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ~/logs:/__api/logs
+      - ./keys:/keys
       - ./__api:/__api
-      - node_modules:/__api/node_modules
+      - node_modules_api:/__api/node_modules
     networks:
       - app-network
     command: ./wait-for.sh db:27017 -- yarn dev
+
+  client:
+    build:
+      context: ./__client
+      dockerfile: Dockerfile
+    container_name: egresados__client
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 3000:3000
+    volumes:
+      - ./__client:/__client
+      - node_modules_client:/__client/node_modules
+    networks:
+      - app-network
 
   db:
     image: mongo:4.2.6-bionic
@@ -36,7 +51,8 @@ services:
 
 volumes:
   dbdata:
-  node_modules:
+  node_modules_api:
+  node_modules_client:
 networks:
   app-network:
     driver: bridge
