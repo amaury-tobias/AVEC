@@ -24,6 +24,16 @@ $ chmod 600 ./traefik/acme.json
 
 > on ./traefik.yml use your email on certificatesResolvers > appresolver > acme > email
 
+- setup keys to use on JWT
+
+```bash
+$ openssl genrsa -out ./keys/key.pem 2048
+$ openssl rsa -in ./keys/key.pem -outform PEM -pubout -out ./keys/public.pem 
+# customize your .env file
+```
+
+> The names `key.pem` and `public.pem` are required to load keys correctly
+
 - starting server
 
 ```bash
