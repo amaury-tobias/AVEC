@@ -14,7 +14,7 @@ router.post(
 router.get(
   '/auth/user',
   passport.authenticate('jwt', { session: false }),
-  (ctx) => (ctx.body = ctx.state.user)
+  (ctx) => (ctx.body = { user: ctx.state.user })
 )
 
 export default router

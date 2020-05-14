@@ -1,37 +1,60 @@
 version: "3"
 
 services:
+  reverseproxy:
+    image: traefik:v2.2.1
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/traefik.yml:/traefik.yml # Traefik configuration file
+      - ./traefik/acme.json:/acme.json # Tell Traefik to save SSL certs here
+    networks:
+      - app-network
+
   api:
     build:
       context: ./__api
       dockerfile: Dockerfile
-    container_name: egresados__api
     restart: unless-stopped
     env_file: .env
-    environment:
-      MONGO_HOSTNAME: db
-    ports:
-      - 5000:5000
+    expose:
+      - $API_PORT
     volumes:
       - ./keys:/keys
       - ./__api:/__api
       - node_modules_api:/__api/node_modules
     networks:
       - app-network
+    # labels:
+      # traefik.enable: true
+      # traefik.port: $API_PORT
+      # traefik.http.routers.api.rule: Host(`$API_HOST`)
+      # traefik.http.routers.api.entrypoints: websecure
+      # traefik.http.routers.api.tls.certresolver: appresolver
     command: ./wait-for.sh db:27017 -- yarn dev
 
-  client:
+  nuxt:
     build:
       context: ./__client
       dockerfile: Dockerfile
-    container_name: egresados__client
     restart: unless-stopped
     env_file: .env
-    ports:
-      - 3000:3000
+    links:
+      - "api:$API_HOST"
+    expose:
+      - $NUXT_PORT
     volumes:
       - ./__client:/__client
       - node_modules_client:/__client/node_modules
+    labels:
+      traefik.enable: true
+      traefik.port: $NUXT_PORT
+      traefik.http.routers.nuxt.rule: Host(`$NUXT_HOST`)
+      # traefik.http.routers.nuxt.entrypoints: websecure
+      # traefik.http.routers.nuxt.tls.certresolver: appresolver
     networks:
       - app-network
 

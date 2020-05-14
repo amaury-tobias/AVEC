@@ -1,8 +1,6 @@
 <template>
   <main class="mt-16">
-    <section
-      class="bg-white dark:bg-black border-transparent dark:border-gray-700 border shadow-xl rounded-lg px-2 pb-8"
-    >
+    <section class="bg-white dark:bg-gray-900 shadow-xl rounded-lg px-2 pb-8">
       <div class="flex justify-center">
         <div class="w-full flex justify-center items-center -mt-16">
           <v-avatar />
@@ -114,8 +112,18 @@
               molestiae odit nemo iure? Quas nesciunt aperiam placeat. Quasi
               esse itaque atque dicta necessitatibus!
             </p>
-            <a href="#" class="font-normal text-purple-400">
-              Contact
+            <a
+              href="mailto:contacto@amaurytq.dev"
+              class="text-sm text-purple-400"
+            >
+              Contacto
+            </a>
+            <br />
+            <a
+              class="text-xs text-gray-600 cursor-pointer"
+              @click="$auth.logout()"
+            >
+              Cerrar Sesión
             </a>
           </div>
         </div>
@@ -168,7 +176,7 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
 .vue-tags-input {
-  @apply bg-light text-dark rounded-lg;
+  @apply rounded-lg;
 }
 .tag {
   background: #5c6bc0;
@@ -176,14 +184,14 @@ export default defineComponent({
 }
 </style>
 <style lang="postcss">
-.ti-new-tag-input {
+/* .ti-new-tag-input {
   @apply bg-light text-dark;
-}
+} */
 .ti-tags {
   @apply justify-center;
 }
 .ti-input {
-  @apply border-gray-transparent rounded-lg !important;
+  @apply rounded-lg !important;
 }
 .ti-new-tag-input-wrapper {
   width: 100%;

@@ -17,17 +17,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'nuxt-composition-api'
+import { defineComponent, computed, useContext } from 'nuxt-composition-api'
 import VRadio from '@/components/VRadio.vue'
 
 export default defineComponent({
   components: { VRadio },
-  setup(_, { root }) {
+  setup() {
+    const { app } = useContext()
+
     const theme = computed({
-      // @ts-ignore
-      get: () => root.$colorMode.preference,
-      // @ts-ignore
-      set: (val) => (root.$colorMode.preference = val),
+      get: () => app.$colorMode.preference,
+      set: (val) => (app.$colorMode.preference = val),
     })
 
     return { theme }

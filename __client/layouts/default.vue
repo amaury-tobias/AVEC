@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="min-h-screen flex items-center justify-center w-full bg-gray-200 dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-300 select-none"
-  >
+  <div class="min-h-screen flex items-center justify-center w-full">
     <div class="flex w-full justify-center">
       <sidebar class="hidden md:flex" />
 

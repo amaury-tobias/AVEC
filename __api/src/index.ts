@@ -12,19 +12,17 @@ import { PassportProvider } from './services/PassportProvider'
 
 import authRouter from './routes/Auth'
 
-const PORT = process.env.API_PORT || 80
 const {
   MONGO_USERNAME,
   MONGO_PASSWORD,
   MONGO_HOSTNAME,
   MONGO_PORT,
   MONGO_DB,
+  API_PORT,
 } = process.env
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  reconnectTries: Number.MAX_VALUE,
-  reconnectInterval: 500,
   connectTimeoutMS: 10000,
 }
 const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`
@@ -38,7 +36,12 @@ function setupKoa() {
   )
 
   app.use(helmet())
-  app.use(cors())
+  app.use(
+    cors({
+      origin: '*',
+      allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    })
+  )
   app.use(koaLogger())
   app.use(bodyParser())
   app.use(json())
@@ -66,7 +69,9 @@ async function start() {
     const keys = await setupKeys()
     setupPassport(keys)
     const app = setupKoa()
-    app.listen(PORT, () => logger.info(`Koa server listening on ${PORT}`))
+    app.listen(API_PORT, () =>
+      logger.info(`Koa server listening on ${API_PORT}`)
+    )
   } catch (err) {
     logger.error(err.stack)
   }

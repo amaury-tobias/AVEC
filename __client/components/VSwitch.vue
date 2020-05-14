@@ -10,7 +10,7 @@
       <span
         class="absolute block w-4 h-4 mt-1 ml-1 rounded-full shadow inset-y-0 left-0 focus-within:shadow-outline transition-transform duration-300 ease-in-out transform"
         :class="{
-          'translate-x-full bg-light-highlight': value,
+          'translate-x-full bg-gray-200': value,
           'bg-white': !value,
         }"
       >

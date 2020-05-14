@@ -26,7 +26,11 @@
           <li><a href="">· Información adicional</a></li>
           <li><a href="">·Términos de servicio</a></li>
           <li><a href="">· Contacto</a></li>
-          <li><a href="#">· Cerrar sesión</a></li>
+          <li>
+            <a class="cursor-pointer" @click="$auth.logout()"
+              >· Cerrar sesión</a
+            >
+          </li>
           <li>
             <a
               class="inline-flex items-center"

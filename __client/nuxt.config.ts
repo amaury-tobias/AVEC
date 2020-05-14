@@ -1,16 +1,12 @@
 import path from 'path'
 import { Configuration } from '@nuxt/types'
 import markdownIt from 'markdown-it'
-
-const port = process.env.NUXT_PORT
-const host = process.env.NUXT_HOST || '0.0.0.0'
-const isDev = process.env.NODE_ENV === 'development'
-const API_URL = process.env.API_URL || 'http://api'
-const API_PORT = process.env.API_PORT || 5000
-const backendHost = `${API_URL}:${API_PORT}`
+const { NUXT_PORT, NODE_ENV, API_HOST, API_PORT } = process.env
+const isDev = NODE_ENV === 'development'
+const backendHost = `http://${API_HOST}:${API_PORT}`
 
 const config: Configuration = {
-  server: { host: '0.0.0.0', port },
+  server: { host: '0.0.0.0', port: NUXT_PORT },
   mode: 'universal',
   head: {
     title: 'Egresados',
@@ -30,25 +26,20 @@ const config: Configuration = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  loading: { color: 'var(--dark-color)' },
+  loading: { color: '#9f7aea' },
   css: [],
-  plugins: [
-    '@/plugins/click-outside-directive',
-    { src: '@/plugins/vue-tags-input', ssr: false },
-  ],
+  plugins: [{ src: '@/plugins/vue-tags-input', ssr: false }],
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@teamnovu/nuxt-breaky',
+    ['@teamnovu/nuxt-breaky', { position: 'topRight' }],
     'nuxt-composition-api',
   ],
   modules: ['@nuxtjs/axios', '@nuxtjs/auth'],
   axios: {
-    host,
-    port,
     prefix: '/api',
     proxy: true,
   },
@@ -62,8 +53,13 @@ const config: Configuration = {
         endpoints: {
           login: { url: '/auth/login' },
           logout: false,
-          user: { url: '/auth/user', propertyName: 'user' },
+          user: { url: '/auth/user' },
         },
+      },
+    },
+    cookie: {
+      options: {
+        secure: !isDev,
       },
     },
   },
