@@ -15,32 +15,39 @@ services:
       - frontend
 
   api:
-    image: amaurytobias/avec_api
+    build:
+      context: ./__api
+      dockerfile: Dockerfile.dev
     restart: unless-stopped
     env_file: .env
     expose:
       - $API_PORT
     volumes:
       - ./keys:/keys
+      - ./__api:/__api
+      - node_modules_api:/__api/node_modules
     networks:
       - backend
       - frontend
-    command: ./wait-for.sh db:27017 -- node dist
+    command: ./wait-for.sh db:27017 -- yarn dev
 
   nuxt:
-    image: amaurytobias/avec_client
+    build:
+      context: ./__client
+      dockerfile: Dockerfile.dev
     restart: unless-stopped
     env_file: .env
     links:
       - "api:$API_HOST"
     expose:
       - $NUXT_PORT
+    volumes:
+      - ./__client:/__client
+      - node_modules_client:/__client/node_modules
     labels:
       traefik.enable: true
       traefik.port: $NUXT_PORT
       traefik.http.routers.nuxt.rule: Host(`$NUXT_HOST`)
-      traefik.http.routers.nuxt.entrypoints: websecure
-      traefik.http.routers.nuxt.tls.certresolver: appresolver
     networks:
       - frontend
 
@@ -60,6 +67,8 @@ services:
 
 volumes:
   dbdata:
+  node_modules_api:
+  node_modules_client:
 networks:
   backend:
     driver: bridge
