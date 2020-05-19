@@ -23,7 +23,7 @@
     "vue-feather-icons": "^5.0.0"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.6",
+    "@nuxt/typescript-build": "^1.0.0",
     "@nuxt/typescript-runtime": "^0.4.6",
     "@nuxtjs/color-mode": "^1.0.0",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
