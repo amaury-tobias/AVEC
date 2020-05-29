@@ -6566,10 +6566,10 @@ mdast-util-compact@^2.0.0:
   dependencies:
     unist-util-visit "^2.0.0"
 
-mdi-vue@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/mdi-vue/-/mdi-vue-1.6.0.tgz#3245bfd8d097d872e76d1e6ae71dc0ba758c8324"
-  integrity sha512-+KMzNbNFW3J4bb1EyvGaovxgpNXHh9alhXrhAoV1r7U9EQH0sJE+vhzK7TbmegOMBqyUOOxNKx3e5oDDqMQL7A==
+mdi-vue@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/mdi-vue/-/mdi-vue-1.6.1.tgz#8a558b2cfc3dd020706b7d7b71c537c2ccd888ed"
+  integrity sha512-m6zNABbJDcCHrZvIc9mRUQUBDoDjQUAcXA1Fa3X0QHMnmGgHZ001qp9KJrzKFe09YBHZS5H0t7vzH8p+U8x1Ww==
   dependencies:
     vue "^2.6.11"
 
