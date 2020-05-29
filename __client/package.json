@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.6",
-    "@nuxt/typescript-runtime": "^0.4.6",
+    "@nuxt/typescript-runtime": "^0.4.8",
     "@nuxtjs/color-mode": "^1.0.0",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
