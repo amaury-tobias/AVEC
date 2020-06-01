@@ -7158,10 +7158,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-composition-api@^0.7.4:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.7.4.tgz#8967b6602db0db869cda7c2f521f9570654b6cb2"
-  integrity sha512-is1GWlVFHU937pYvTWwAAZkc26qVxEd8RnUT3U2hb3fkwu4csV8gk94UquxqoYZZWPjFk9HmMDpuGiRXGuOb4Q==
+nuxt-composition-api@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.8.0.tgz#cda982770a10aee6ea24089257e5fc0cfe8eee2b"
+  integrity sha512-TyEDTkxI8cm82Xo0nRwibNHxJeGCEet+fDX/i7Acnierfs7YoXNdpRQwqB8PkjjayTzHuKctcPXjFzPuYrSxKA==
   dependencies:
     "@vue/composition-api" "^0.5.0"
     defu "^2.0.4"
