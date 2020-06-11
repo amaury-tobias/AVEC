@@ -1911,12 +1911,12 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@vue/composition-api@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-0.5.0.tgz#2dbaa02a5d1f5d0d407d53d5529fe444aa8362f3"
-  integrity sha512-9QDFWq7q839G1CTTaxeruPOTrrVOPSaVipJ2TxxK9QAruePNTHOGbOOFRpc8WLl4YPsu1/c29yBhMVmrXz8BZw==
+"@vue/composition-api@^0.6.1":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-0.6.2.tgz#0228e0540778868685b77525f48e6a4a41719f50"
+  integrity sha512-gJYwMiENz5ph2l9GYND7N7x0R/12UGZe5ZP5/aCXyYFXnuhe11EtUZg+tg7bmVBMcKUHg8pjrEL1rN75/Z6QQw==
   dependencies:
-    tslib "^1.9.3"
+    tslib "^2.0.0"
 
 "@vue/eslint-config-prettier@^6.0.0":
   version "6.0.0"
@@ -7158,12 +7158,12 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-composition-api@^0.7.4:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.7.4.tgz#8967b6602db0db869cda7c2f521f9570654b6cb2"
-  integrity sha512-is1GWlVFHU937pYvTWwAAZkc26qVxEd8RnUT3U2hb3fkwu4csV8gk94UquxqoYZZWPjFk9HmMDpuGiRXGuOb4Q==
+nuxt-composition-api@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.9.0.tgz#2733b505d3436251e5afd19d674d5b423ee2f4b5"
+  integrity sha512-u0Xt39CDvkxQ36m5BpzISOK6TCIwDJzOW/+QhureJyPY3WG8FeXh7Dm6mLV8xhoQ+6X8vWo7KbCAYTLYK1qw8g==
   dependencies:
-    "@vue/composition-api" "^0.5.0"
+    "@vue/composition-api" "^0.6.1"
     defu "^2.0.4"
 
 nuxt-purgecss@^0.2.1:
@@ -10254,10 +10254,15 @@ ts-node@^8.10.1:
     source-map-support "^0.5.17"
     yn "3.1.1"
 
-tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1.8.1, tslib@^1.9.0:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+
+tslib@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
+  integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 
 tsutils@^3.17.1:
   version "3.17.1"
