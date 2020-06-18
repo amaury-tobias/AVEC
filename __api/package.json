@@ -33,7 +33,7 @@
     "@types/koa-passport": "^4.0.2",
     "@types/koa__cors": "^3.0.1",
     "@types/koa__router": "^8.0.2",
-    "@types/mongoose": "^5.7.21",
+    "@types/mongoose": "^5.7.26",
     "@types/passport-jwt": "^3.0.3",
     "@types/passport-local": "^1.0.33",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
