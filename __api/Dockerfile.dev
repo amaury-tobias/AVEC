@@ -1,4 +1,4 @@
-FROM node:14.2.0-alpine
+FROM node:14.12.0-alpine
 WORKDIR /__api
 COPY package.json .
 RUN yarn
