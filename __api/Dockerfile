@@ -1,11 +1,11 @@
-FROM node:14.2.0-alpine as builder
+FROM node:15.0.0-alpine as builder
 WORKDIR /__api
 COPY package.json .
 RUN yarn
 COPY . .
 RUN yarn build
 
-FROM node:14.2.0-alpine
+FROM node:15.0.0-alpine
 ENV NODE_ENV=production
 RUN mkdir -p /__api/node_modules && chown -R node:node /__api
 WORKDIR /__api
