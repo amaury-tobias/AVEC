@@ -41,7 +41,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.7",
     "prettier": "^2.0.5",
-    "stylelint": "^13.5.0",
+    "stylelint": "^13.13.0",
     "stylelint-config-recommended": "^3.0.0",
     "tailwindcss-dark-mode": "^1.1.4",
     "ts-loader": "^7.0.4",
