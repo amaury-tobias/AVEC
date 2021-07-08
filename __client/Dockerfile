@@ -1,11 +1,11 @@
-FROM node:14.2.0-alpine as builder
+FROM node:16.4.2-alpine as builder
 WORKDIR /__client
 COPY package.json .
 RUN yarn
 COPY . .
 RUN yarn build
 
-FROM node:14.2.0-alpine
+FROM node:16.4.2-alpine
 WORKDIR /__client
 COPY --from=builder /__client/package.json .
 COPY --from=builder /__client/yarn.lock .
